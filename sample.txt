@@ -1,0 +1,104 @@
+mca@MCA18:~/Documents/network_lab$ pwd
+/home/mca/Documents/network_lab
+mca@MCA18:~/Documents/network_lab$ ls
+file1.txt  file.txt  irfana  python  s2.txt
+mca@MCA18:~/Documents/network_lab$ wc -l s2.txt
+3 s2.txt
+mca@MCA18:~/Documents/network_lab$ mv file1.txt s2.txt
+mca@MCA18:~/Documents/network_lab$ tar head s2.txt
+tar: invalid option -- 'e'
+Try 'tar --help' or 'tar --usage' for more information.
+mca@MCA18:~/Documents/network_lab$ head file1.txt
+head: cannot open 'file1.txt' for reading: No such file or directory
+mca@MCA18:~/Documents/network_lab$ head f1.txt
+head: cannot open 'f1.txt' for reading: No such file or directory
+mca@MCA18:~/Documents/network_lab$ cat > linux.txt
+welcome to the world of networking
+education is the most powerful weapon
+wisdom liberates
+mca@MCA18:~/Documents/network_lab$ head linux.txt
+welcome to the world of networking
+education is the most powerful weapon
+wisdom liberates
+mca@MCA18:~/Documents/network_lab$ man tar
+mca@MCA18:~/Documents/network_lab$ tar -cvf abc.tar s2,txt
+tar: s2,txt: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+mca@MCA18:~/Documents/network_lab$ tar -cvf abc.tar s2.txt
+s2.txt
+mca@MCA18:~/Documents/network_lab$ cut -c 1-5 linux.txt
+welco
+educa
+wisdo
+mca@MCA18:~/Documents/network_lab$ paste s2.txt linux.txt
+linux	welcome to the world of networking
+welcome to linux	education is the most powerful weapon
+network	wisdom liberates
+mca@MCA18:~/Documents/network_lab$ grep "welcome" linux.txt
+welcome to the world of networking
+mca@MCA18:~/Documents/network_lab$ expr 10 + 5
+15
+mca@MCA18:~/Documents/network_lab$ chmod user1 linux.txt
+chmod: invalid mode: ‘user1’
+Try 'chmod --help' for more information.
+mca@MCA18:~/Documents/network_lab$ chmod -v linux.txt
+chmod: missing operand after ‘linux.txt’
+Try 'chmod --help' for more information.
+mca@MCA18:~/Documents/network_lab$ chmod o+r linux.txt
+mca@MCA18:~/Documents/network_lab$ ls -l linux.txt
+-rw-rw-r-- 1 mca mca 90 Feb 27 14:30 linux.txt
+mca@MCA18:~/Documents/network_lab$ chown user1 linux.txt
+chown: invalid user: ‘user1’
+mca@MCA18:~/Documents/network_lab$ chown user1 s2.txt
+chown: invalid user: ‘user1’
+mca@MCA18:~/Documents/network_lab$ sudo chown user1 linux.txt
+[sudo] password for mca: 
+chown: invalid user: ‘user1’
+mca@MCA18:~/Documents/network_lab$ sudo chown mca linux.txt
+mca@MCA18:~/Documents/network_lab$ ls > linux.txt
+mca@MCA18:~/Documents/network_lab$ ls -l linux.txt
+-rw-rw-r-- 1 mca mca 48 Feb 27 15:00 linux.txt
+mca@MCA18:~/Documents/network_lab$ cat linux.txt
+abc.tar
+file.txt
+irfana
+linux.txt
+python
+s2.txt
+mca@MCA18:~/Documents/network_lab$ ls |wc -l
+6
+mca@MCA18:~/Documents/network_lab$ ls -l | head
+total 32
+-rw-rw-r-- 1 mca mca 10240 Feb 27 14:35 abc.tar
+-rw-rw-r-- 1 mca mca    22 Feb 23 14:45 file.txt
+drwxrwxr-x 2 mca mca  4096 Feb 20 15:14 irfana
+-rw-rw-r-- 1 mca mca    48 Feb 27 15:00 linux.txt
+drwxrwxr-x 2 mca mca  4096 Feb 23 14:39 python
+-rw-rw-r-- 1 mca mca    31 Feb 23 15:06 s2.txt
+mca@MCA18:~/Documents/network_lab$ ls -l | tail
+total 32
+-rw-rw-r-- 1 mca mca 10240 Feb 27 14:35 abc.tar
+-rw-rw-r-- 1 mca mca    22 Feb 23 14:45 file.txt
+drwxrwxr-x 2 mca mca  4096 Feb 20 15:14 irfana
+-rw-rw-r-- 1 mca mca    48 Feb 27 15:00 linux.txt
+drwxrwxr-x 2 mca mca  4096 Feb 23 14:39 python
+-rw-rw-r-- 1 mca mca    31 Feb 23 15:06 s2.txt
+mca@MCA18:~/Documents/network_lab$ sudo useradd student
+[sudo] password for mca: 
+mca@MCA18:~/Documents/network_lab$ sudo passwd student
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+passwd: Have exhausted maximum number of retries for service
+passwd: password unchanged
+mca@MCA18:~/Documents/network_lab$ 
+
+
