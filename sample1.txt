@@ -1,0 +1,612 @@
+mca@MCA18:~/Documents/network_lab$ man
+What manual page do you want?
+For example, try 'man man'.
+mca@MCA18:~/Documents/network_lab$ man ls
+mca@MCA18:~/Documents/network_lab$ man cp
+mca@MCA18:~/Documents/network_lab$ man mkdir
+mca@MCA18:~/Documents/network_lab$ man ls
+mca@MCA18:~/Documents/network_lab$ userdel irfana
+userdel: user 'irfana' does not exist
+mca@MCA18:~/Documents/network_lab$ userdel student
+userdel: Permission denied.
+userdel: cannot lock /etc/passwd; try again later.
+mca@MCA18:~/Documents/network_lab$ sudo userdel student
+[sudo] password for mca: 
+Sorry, try again.
+[sudo] password for mca: 
+mca@MCA18:~/Documents/network_lab$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs            1605128     2432   1602696   1% /run
+/dev/nvme0n1p6 188768352 41679280 137427376  24% /
+tmpfs            8025628        0   8025628   0% /dev/shm
+tmpfs               5120        8      5112   1% /run/lock
+efivarfs             256      126       126  50% /sys/firmware/efi/efivars
+/dev/nvme0n1p1     98304    33302     65002  34% /boot/efi
+tmpfs            1605124      124   1605000   1% /run/user/1000
+mca@MCA18:~/Documents/network_lab$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  2.4M  1.6G   1% /run
+/dev/nvme0n1p6  181G   40G  132G  24% /
+tmpfs           7.7G     0  7.7G   0% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+efivarfs        256K  126K  126K  50% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   96M   33M   64M  34% /boot/efi
+tmpfs           1.6G  124K  1.6G   1% /run/user/1000
+mca@MCA18:~/Documents/network_lab$ usermod
+Usage: usermod [options] LOGIN
+
+Options:
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -b, --badname                 allow bad names
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -r, --remove                  remove the user from only the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -R, --root CHROOT_DIR         directory to chroot into
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+  -Z, --selinux-user SEUSER     new SELinux user mapping for the user account
+
+mca@MCA18:~/Documents/network_lab$ usermod -l
+usermod: option requires an argument -- 'l'
+Usage: usermod [options] LOGIN
+
+Options:
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -b, --badname                 allow bad names
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -r, --remove                  remove the user from only the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -R, --root CHROOT_DIR         directory to chroot into
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+  -Z, --selinux-user SEUSER     new SELinux user mapping for the user account
+
+mca@MCA18:~/Documents/network_lab$ ps
+    PID TTY          TIME CMD
+   2609 pts/0    00:00:00 bash
+   5597 pts/0    00:00:00 ps
+mca@MCA18:~/Documents/network_lab$ ps -e
+    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 pool_workqueue_release
+      4 ?        00:00:00 kworker/R-rcu_gp
+      5 ?        00:00:00 kworker/R-sync_wq
+      6 ?        00:00:00 kworker/R-kvfree_rcu_reclaim
+      7 ?        00:00:00 kworker/R-slub_flushwq
+      8 ?        00:00:00 kworker/R-netns
+      9 ?        00:00:01 kworker/0:0+pm
+     10 ?        00:00:00 kworker/0:0H-events_highpri
+     13 ?        00:00:00 kworker/R-mm_percpu_wq
+     14 ?        00:00:00 ksoftirqd/0
+     15 ?        00:00:01 rcu_preempt
+     16 ?        00:00:00 rcu_exp_par_gp_kthread_worker/0
+     17 ?        00:00:00 rcu_exp_gp_kthread_worker
+     18 ?        00:00:00 migration/0
+     19 ?        00:00:00 idle_inject/0
+     20 ?        00:00:00 cpuhp/0
+     21 ?        00:00:00 cpuhp/2
+     22 ?        00:00:00 idle_inject/2
+     23 ?        00:00:00 migration/2
+     24 ?        00:00:00 ksoftirqd/2
+     26 ?        00:00:00 kworker/2:0H-events_highpri
+     27 ?        00:00:00 cpuhp/4
+     28 ?        00:00:00 idle_inject/4
+     29 ?        00:00:00 migration/4
+     30 ?        00:00:00 ksoftirqd/4
+     32 ?        00:00:00 kworker/4:0H-events_highpri
+     33 ?        00:00:00 cpuhp/6
+     34 ?        00:00:00 idle_inject/6
+     35 ?        00:00:00 migration/6
+     36 ?        00:00:00 ksoftirqd/6
+     38 ?        00:00:00 kworker/6:0H-events_highpri
+     39 ?        00:00:00 cpuhp/8
+     40 ?        00:00:00 idle_inject/8
+     41 ?        00:00:00 migration/8
+     42 ?        00:00:00 ksoftirqd/8
+     44 ?        00:00:00 kworker/8:0H-events_highpri
+     45 ?        00:00:00 cpuhp/10
+     46 ?        00:00:00 idle_inject/10
+     47 ?        00:00:00 migration/10
+     48 ?        00:00:00 ksoftirqd/10
+     50 ?        00:00:00 kworker/10:0H-events_highpri
+     51 ?        00:00:00 cpuhp/12
+     52 ?        00:00:00 idle_inject/12
+     53 ?        00:00:00 migration/12
+     54 ?        00:00:00 ksoftirqd/12
+     55 ?        00:00:00 kworker/12:0-events
+     56 ?        00:00:00 kworker/12:0H-events_highpri
+     57 ?        00:00:00 cpuhp/13
+     58 ?        00:00:00 idle_inject/13
+     59 ?        00:00:00 migration/13
+     60 ?        00:00:00 ksoftirqd/13
+     62 ?        00:00:00 kworker/13:0H-events_highpri
+     63 ?        00:00:00 cpuhp/14
+     64 ?        00:00:00 idle_inject/14
+     65 ?        00:00:00 migration/14
+     66 ?        00:00:00 ksoftirqd/14
+     68 ?        00:00:00 kworker/14:0H-events_highpri
+     69 ?        00:00:00 cpuhp/15
+     70 ?        00:00:00 idle_inject/15
+     71 ?        00:00:00 migration/15
+     72 ?        00:00:00 ksoftirqd/15
+     73 ?        00:00:00 kworker/15:0-mm_percpu_wq
+     74 ?        00:00:00 kworker/15:0H-events_highpri
+     75 ?        00:00:00 cpuhp/1
+     76 ?        00:00:00 idle_inject/1
+     77 ?        00:00:00 migration/1
+     78 ?        00:00:00 ksoftirqd/1
+     80 ?        00:00:00 kworker/1:0H-events_highpri
+     81 ?        00:00:00 cpuhp/3
+     82 ?        00:00:00 idle_inject/3
+     83 ?        00:00:00 migration/3
+     84 ?        00:00:00 ksoftirqd/3
+     86 ?        00:00:00 kworker/3:0H-events_highpri
+     87 ?        00:00:00 cpuhp/5
+     88 ?        00:00:00 idle_inject/5
+     89 ?        00:00:00 migration/5
+     90 ?        00:00:00 ksoftirqd/5
+     92 ?        00:00:00 kworker/5:0H-events_highpri
+     93 ?        00:00:00 cpuhp/7
+     94 ?        00:00:00 idle_inject/7
+     95 ?        00:00:00 migration/7
+     96 ?        00:00:00 ksoftirqd/7
+     98 ?        00:00:00 kworker/7:0H-events_highpri
+     99 ?        00:00:00 cpuhp/9
+    100 ?        00:00:00 idle_inject/9
+    101 ?        00:00:00 migration/9
+    102 ?        00:00:00 ksoftirqd/9
+    104 ?        00:00:00 kworker/9:0H-events_highpri
+    105 ?        00:00:00 cpuhp/11
+    106 ?        00:00:00 idle_inject/11
+    107 ?        00:00:00 migration/11
+    108 ?        00:00:00 ksoftirqd/11
+    110 ?        00:00:00 kworker/11:0H-events_highpri
+    111 ?        00:00:00 kdevtmpfs
+    112 ?        00:00:00 kworker/R-inet_frag_wq
+    113 ?        00:00:00 rcu_tasks_kthread
+    114 ?        00:00:00 rcu_tasks_rude_kthread
+    115 ?        00:00:00 rcu_tasks_trace_kthread
+    116 ?        00:00:00 kauditd
+    117 ?        00:00:00 khungtaskd
+    118 ?        00:00:00 oom_reaper
+    120 ?        00:00:00 kworker/u64:2-events_unbound
+    121 ?        00:00:00 kworker/R-writeback
+    122 ?        00:00:00 kcompactd0
+    123 ?        00:00:00 ksmd
+    124 ?        00:00:00 khugepaged
+    125 ?        00:00:00 kworker/R-kblockd
+    126 ?        00:00:00 kworker/R-blkcg_punt_bio
+    127 ?        00:00:00 kworker/R-kintegrityd
+    128 ?        00:00:00 irq/9-acpi
+    129 ?        00:00:00 kworker/12:1-mm_percpu_wq
+    130 ?        00:00:00 kworker/13:1-mm_percpu_wq
+    131 ?        00:00:00 kworker/1:1-events
+    132 ?        00:00:00 kworker/14:1-mm_percpu_wq
+    133 ?        00:00:00 kworker/R-tpm_dev_wq
+    134 ?        00:00:00 kworker/R-ata_sff
+    135 ?        00:00:00 kworker/R-md
+    136 ?        00:00:00 kworker/R-md_bitmap
+    137 ?        00:00:00 kworker/R-edac-poller
+    138 ?        00:00:00 kworker/R-devfreq_wq
+    139 ?        00:00:00 watchdogd
+    140 ?        00:00:00 kworker/R-quota_events_unbound
+    141 ?        00:00:00 kworker/12:1H-kblockd
+    142 ?        00:00:00 kswapd0
+    143 ?        00:00:00 ecryptfs-kthread
+    144 ?        00:00:00 kworker/R-kthrotld
+    145 ?        00:00:00 irq/122-aerdrv
+    146 ?        00:00:00 irq/123-aerdrv
+    147 ?        00:00:00 kworker/R-acpi_thermal_pm
+    148 ?        00:00:00 kworker/4:1-events
+    149 ?        00:00:00 kworker/R-hfi-updates
+    150 ?        00:00:00 kworker/R-mld
+    151 ?        00:00:00 kworker/R-ipv6_addrconf
+    152 ?        00:00:00 kworker/R-kstrp
+    153 ?        00:00:00 kworker/2:1-mm_percpu_wq
+    154 ?        00:00:00 kworker/10:1-events
+    155 ?        00:00:00 kworker/3:1-events
+    157 ?        00:00:00 kworker/u65:0-rtw89_tx_wq
+    168 ?        00:00:00 kworker/R-charger_manager
+    169 ?        00:00:00 kworker/0:1H-kblockd
+    192 ?        00:00:00 kworker/14:1H-i915_cleanup
+    196 ?        00:00:00 kworker/13:1H-i915_cleanup
+    197 ?        00:00:00 kworker/15:1-cgroup_offline
+    198 ?        00:00:00 kworker/6:1H-kblockd
+    217 ?        00:00:00 kworker/2:1H-i915_cleanup
+    219 ?        00:00:00 kworker/10:1H-kblockd
+    253 ?        00:00:00 kworker/8:1H-kblockd
+    254 ?        00:00:00 kworker/9:1H-kblockd
+    255 ?        00:00:00 kworker/15:1H-kblockd
+    256 ?        00:00:00 kworker/7:1H-kblockd
+    257 ?        00:00:00 kworker/1:1H-kblockd
+    258 ?        00:00:00 kworker/5:1H-kblockd
+    259 ?        00:00:00 kworker/11:1H-kblockd
+    260 ?        00:00:00 kworker/3:1H-kblockd
+    262 ?        00:00:00 kworker/4:1H-i915_cleanup
+    263 ?        00:00:00 kworker/7:2-events
+    280 ?        00:00:00 kworker/6:1-events
+    313 ?        00:00:00 kworker/11:1-mm_percpu_wq
+    315 ?        00:00:00 irq/152-aerdrv
+    317 ?        00:00:00 scsi_eh_0
+    318 ?        00:00:00 kworker/R-scsi_tmf_0
+    319 ?        00:00:00 scsi_eh_1
+    320 ?        00:00:00 kworker/R-scsi_tmf_1
+    321 ?        00:00:00 scsi_eh_2
+    322 ?        00:00:00 kworker/R-scsi_tmf_2
+    323 ?        00:00:00 scsi_eh_3
+    324 ?        00:00:00 kworker/R-scsi_tmf_3
+    325 ?        00:00:00 scsi_eh_4
+    326 ?        00:00:00 kworker/R-scsi_tmf_4
+    327 ?        00:00:00 scsi_eh_5
+    328 ?        00:00:00 kworker/R-scsi_tmf_5
+    329 ?        00:00:00 scsi_eh_6
+    330 ?        00:00:00 kworker/R-scsi_tmf_6
+    331 ?        00:00:00 scsi_eh_7
+    332 ?        00:00:00 kworker/R-scsi_tmf_7
+    336 ?        00:00:00 kworker/R-nvme-wq
+    337 ?        00:00:00 kworker/R-nvme-reset-wq
+    338 ?        00:00:00 kworker/R-nvme-delete-wq
+    339 ?        00:00:00 kworker/R-nvme-auth-wq
+    340 ?        00:00:00 kworker/3:2-events
+    377 ?        00:00:00 jbd2/nvme0n1p6-8
+    378 ?        00:00:00 kworker/R-ext4-rsv-conversion
+    387 ?        00:00:00 kworker/9:1-mm_percpu_wq
+    393 ?        00:00:00 kworker/8:1-i915-unordered
+    430 ?        00:00:00 systemd-journal
+    465 ?        00:00:00 systemd-udevd
+    519 ?        00:00:00 psimon
+    555 ?        00:00:00 kworker/u64:13-i915
+    556 ?        00:00:00 kworker/u64:14-events_unbound
+    557 ?        00:00:01 kworker/u64:15-flush-259:0
+    562 ?        00:00:00 kworker/u64:20-events_unbound
+    592 ?        00:00:00 irq/171-mei_me
+    600 ?        00:00:00 kworker/14:2-events
+    687 ?        00:00:00 kworker/11:2-mm_percpu_wq
+    695 ?        00:00:00 kworker/R-cfg80211
+    704 ?        00:00:00 kworker/u65:1-i915_flip
+    723 ?        00:00:00 kworker/R-ttm
+    724 ?        00:00:00 card1-crtc0
+    725 ?        00:00:00 card1-crtc1
+    726 ?        00:00:00 card1-crtc2
+    727 ?        00:00:00 card1-crtc3
+    730 ?        00:00:05 irq/174-rtw89_pci
+    962 ?        00:00:00 systemd-oomd
+   1008 ?        00:00:00 systemd-resolve
+   1014 ?        00:00:00 systemd-timesyn
+   1015 ?        00:00:00 kworker/9:2-mm_percpu_wq
+   1181 ?        00:00:01 avahi-daemon
+   1182 ?        00:00:00 bluetoothd
+   1183 ?        00:00:00 dbus-daemon
+   1187 ?        00:00:00 gnome-remote-de
+   1192 ?        00:00:00 polkitd
+   1193 ?        00:00:00 power-profiles-
+   1200 ?        00:00:01 snapd
+   1205 ?        00:00:00 accounts-daemon
+   1206 ?        00:00:00 cron
+   1209 ?        00:00:00 switcheroo-cont
+   1214 ?        00:00:00 systemd-logind
+   1216 ?        00:00:00 thermald
+   1218 ?        00:00:00 udisksd
+   1237 ?        00:00:00 avahi-daemon
+   1241 ?        00:00:04 NetworkManager
+   1242 ?        00:00:04 wpa_supplicant
+   1329 ?        00:00:00 rsyslogd
+   1344 ?        00:00:00 ModemManager
+   1457 ?        00:00:00 cupsd
+   1464 ?        00:00:00 unattended-upgr
+   1489 ?        00:00:00 gdm3
+   1500 ?        00:00:10 mysqld
+   1501 ?        00:00:00 gdm-session-wor
+   1511 ?        00:00:00 psimon
+   1513 ?        00:00:00 systemd
+   1515 ?        00:00:00 (sd-pam)
+   1541 ?        00:00:05 pipewire
+   1542 ?        00:00:00 pipewire
+   1543 ?        00:00:00 snapd-desktop-i
+   1545 ?        00:00:16 wireplumber
+   1546 ?        00:00:02 pipewire-pulse
+   1547 ?        00:00:00 gnome-keyring-d
+   1559 ?        00:00:00 dbus-daemon
+   1570 ?        00:00:00 rtkit-daemon
+   1578 tty2     00:00:00 gdm-wayland-ses
+   1588 tty2     00:00:00 gnome-session-b
+   1690 ?        00:00:00 gcr-ssh-agent
+   1698 ?        00:00:00 gnome-session-c
+   1719 ?        00:00:00 gvfsd
+   1721 ?        00:00:00 xdg-document-po
+   1733 ?        00:00:00 xdg-permission-
+   1735 ?        00:00:00 gvfsd-fuse
+   1743 ?        00:00:00 gnome-session-b
+   1745 ?        00:00:00 fusermount3
+   1789 ?        00:00:00 at-spi-bus-laun
+   1790 ?        00:00:24 gnome-shell
+   1803 ?        00:00:00 dbus-daemon
+   1840 ?        00:00:00 krfcommd
+   1905 ?        00:00:00 at-spi2-registr
+   1906 ?        00:00:00 colord
+   1959 ?        00:00:00 gnome-shell-cal
+   1966 ?        00:00:00 evolution-sourc
+   1967 ?        00:00:00 dconf-service
+   1978 ?        00:00:00 snapd-desktop-i
+   1981 ?        00:00:00 gjs
+   1982 ?        00:00:00 upowerd
+   1989 ?        00:00:00 ibus-daemon
+   1991 ?        00:00:00 gsd-a11y-settin
+   1993 ?        00:00:00 gsd-color
+   2003 ?        00:00:00 gsd-datetime
+   2005 ?        00:00:00 gsd-housekeepin
+   2009 ?        00:00:00 gsd-keyboard
+   2014 ?        00:00:01 gsd-media-keys
+   2020 ?        00:00:00 gsd-power
+   2030 ?        00:00:00 gsd-print-notif
+   2032 ?        00:00:00 gsd-rfkill
+   2037 ?        00:00:00 gsd-screensaver
+   2040 ?        00:00:00 gsd-sharing
+   2042 ?        00:00:00 gsd-smartcard
+   2044 ?        00:00:00 gsd-sound
+   2045 ?        00:00:00 gsd-wacom
+   2071 ?        00:00:00 evolution-alarm
+   2086 ?        00:00:00 gvfs-udisks2-vo
+   2109 ?        00:00:00 gsd-disk-utilit
+   2137 ?        00:00:00 ibus-dconf
+   2142 ?        00:00:01 ibus-extension-
+   2166 ?        00:00:00 ibus-portal
+   2212 ?        00:00:00 gvfs-gphoto2-vo
+   2223 ?        00:00:00 goa-daemon
+   2242 ?        00:00:00 gvfs-afc-volume
+   2259 ?        00:00:00 goa-identity-se
+   2262 ?        00:00:00 gvfs-goa-volume
+   2266 ?        00:00:00 evolution-calen
+   2273 ?        00:00:00 gvfs-mtp-volume
+   2287 ?        00:00:00 evolution-addre
+   2306 ?        00:00:00 ibus-engine-sim
+   2345 ?        00:00:00 gvfsd-trash
+   2372 ?        00:00:00 tracker-miner-f
+   2397 ?        00:00:00 gjs
+   2413 ?        00:00:00 xdg-desktop-por
+   2418 ?        00:00:00 xdg-desktop-por
+   2437 ?        00:00:00 xdg-desktop-por
+   2445 ?        00:00:00 gjs
+   2460 ?        00:00:00 gvfsd-metadata
+   2465 ?        00:00:00 gsd-printer
+   2556 ?        00:00:00 gvfsd-recent
+   2600 ?        00:00:02 gnome-terminal-
+   2609 pts/0    00:00:00 bash
+   2680 ?        00:00:00 cups-browsed
+   2682 ?        00:00:00 kerneloops
+   2685 ?        00:00:00 kerneloops
+   2700 ?        00:00:00 update-notifier
+   2733 ?        00:00:00 dbus
+   2734 ?        00:00:00 dbus
+   3041 ?        00:00:00 snap
+   4023 ?        00:00:00 gvfsd-network
+   4031 ?        00:00:00 gvfsd-smb-brows
+   4039 ?        00:00:00 gvfsd-dnssd
+   4237 ?        00:00:00 kworker/5:0-mm_percpu_wq
+   4238 ?        00:00:00 kworker/8:2-mm_percpu_wq
+   4248 ?        00:00:00 kworker/0:1-kacpi_notify
+   4249 ?        00:00:00 kworker/4:2-i915-unordered
+   4250 ?        00:00:00 kworker/5:2-events
+   4251 ?        00:00:00 kworker/8:0-events
+   4252 ?        00:00:00 kworker/6:2-events
+   4253 ?        00:00:18 firefox
+   4325 ?        00:00:00 crashhelper
+   4437 ?        00:00:00 forkserver
+   4441 ?        00:00:00 Socket Process
+   4459 ?        00:00:02 Privileged Cont
+   4470 ?        00:00:00 RDD Process
+   4666 ?        00:00:00 WebExtensions
+   5018 ?        00:00:00 Utility Process
+   5196 ?        00:00:01 Isolated Web Co
+   5321 ?        00:00:00 kworker/1:0-events
+   5334 ?        00:00:09 Isolated Web Co
+   5404 ?        00:00:00 Web Content
+   5445 ?        00:00:00 kworker/2:2-i915-unordered
+   5451 ?        00:00:00 Web Content
+   5487 ?        00:00:00 Web Content
+   5518 ?        00:00:00 kworker/13:2
+   5519 ?        00:00:00 kworker/7:1
+   5521 ?        00:00:00 kworker/10:0-events
+   5530 ?        00:00:00 kworker/u65:2
+   5568 ?        00:00:00 kworker/0:2-pm
+   5573 ?        00:00:00 kworker/5:1-mm_percpu_wq
+   5575 ?        00:00:00 kworker/4:0-i915-unordered
+   5576 ?        00:00:00 kworker/6:0-events
+   5578 ?        00:00:00 kworker/11:0-mm_percpu_wq
+   5598 ?        00:00:00 kworker/10:2
+   5599 pts/0    00:00:00 ps
+mca@MCA18:~/Documents/network_lab$ top 
+
+top - 11:11:33 up 20 min,  1 user,  load average: 0.44, 0.44, 0.34
+Tasks: 348 total,   1 running, 347 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.7 us,  0.4 sy,  0.0 ni, 98.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  15675.1 total,  11168.8 free,   2748.8 used,   2350.7 buff/cache     
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12926.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                          
+   1790 mca       20   0 4891596 299164 129948 S   7.6   1.9   0:26.58 gnome-shell                                                                      
+   2600 mca       20   0  559516  57284  44952 S   4.3   0.4   0:03.32 gnome-terminal-                                                                  
+   1545 mca        9 -11  406980  19152  13980 S   1.7   0.1   0:17.06 wireplumber                                                                      
+   1500 mysql     20   0 2376400 395524  36160 S   1.0   2.5   0:10.81 mysqld                                                                           
+   1541 mca        9 -11  115612  14736   8920 S   1.0   0.1   0:06.03 pipewire                                                                         
+    730 root     -51   0       0      0      0 S   0.7   0.0   0:05.77 irq/174-rtw89_pci                                                                
+     15 root      20   0       0      0      0 I   0.3   0.0   0:01.87 rcu_preempt                                                                      
+    153 root      20   0       0      0      0 I   0.3   0.0   0:00.18 kworker/2:1-i915-unordered                                                       
+    556 root      20   0       0      0      0 I   0.3   0.0   0:00.57 kworker/u64:14-flush-259:0                                                       
+    704 root       0 -20       0      0      0 I   0.3   0.0   0:00.95 kworker/u65:1-i915_flip                                                          
+   1546 mca        9 -11  115544  14208  10636 S   0.3   0.1   0:03.11 pipewire-pulse                                                                   
+   5334 mca       20   0 3092748 339600 129868 S   0.3   2.1   0:09.43 Isolated Web Co                                                                  
+   5451 mca       20   0 2580160  74584  59048 S   0.3   0.5   0:00.29 Web Content                                                                      
+   5609 mca       20   0   14536   5956   3712 R   0.3   0.0   0:00.05 top                                                                              
+      1 root      20   0   23876  14920   9468 S   0.0   0.1   0:01.21 systemd                                                                          
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd                                                                         
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                           
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                 
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                     
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                           
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                  
+      9 root      20   0       0      0      0 I   0.0   0.0   0:01.77 kworker/0:0-mm_percpu_wq                                                         
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri                                                      
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                           
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/0                                                                      
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0                                                  
+     17 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker                                                        
+     18 root      rt   0       0      0      0 S   0.0   0.0   0:00.02 migration/0                                                                      
+     19 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                                    
+mca@MCA18:~/Documents/network_lab$ cat > sam.txt
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ head -v
+==> standard input <==
+^C
+mca@MCA18:~/Documents/network_lab$ head -v sam.txt
+==> sam.txt <==
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ head -n sam.txt
+head: invalid number of lines: ‘sam.txt’
+mca@MCA18:~/Documents/network_lab$ head -5 sam.txt
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ head -n 5 sam.txt
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ -n 5 sam.txt
+-n: command not found
+mca@MCA18:~/Documents/network_lab$ head 5 sam.txt
+head: cannot open '5' for reading: No such file or directory
+==> sam.txt <==
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ head 3 sam.txt
+head: cannot open '3' for reading: No such file or directory
+==> sam.txt <==
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ head -c 20 sam.txt
+Artificial Intelligemca@MCA18:~/Documents/network_lab$ tail -n 5 sam.txt
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer systems to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is used in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to advance, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social questions.
+mca@MCA18:~/Documents/network_lab$ tail -c sam.txt
+tail: invalid number of bytes: ‘sam.txt’
+mca@MCA18:~/Documents/network_lab$ tail -c 3  sam.txt
+s.
+mca@MCA18:~/Documents/network_lab$ ssh 
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+mca@MCA18:~/Documents/network_lab$ scp
+usage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]
+           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]
+           [-P port] [-S program] [-X sftp_option] source ... target
+mca@MCA18:~/Documents/network_lab$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_ed25519): home
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in home
+Your public key has been saved in home.pub
+The key fingerprint is:
+SHA256:r1ADtwDr8ZBOwVSKEwMGN2nPUZ2MnfARI7HfgIsvFjo mca@MCA18
+The key's randomart image is:
++--[ED25519 256]--+
+|+o=++o*B++       |
+|..o=o*.=*o       |
+| .ooB.= +        |
+|   =o= * +       |
+|    = o S .      |
+|   . o . o       |
+|  E o o   .      |
+|   o . . .       |
+|        .        |
++----[SHA256]-----+
+mca@MCA18:~/Documents/network_lab$ ssh-copy-id
+Usage: /usr/bin/ssh-copy-id [-h|-?|-f|-n|-s|-x] [-i [identity_file]] [-p port] [-F alternative ssh_config file] [-t target_path] [[-o <ssh -o options>] ...] [user@]hostname
+	-f: force mode -- copy keys without trying to check if they are already installed
+	-n: dry run    -- no keys are actually copied
+	-s: use sftp   -- use sftp instead of executing remote-commands. Can be useful if the remote only allows sftp
+	-x: debug      -- enables -x in this shell, for debugging
+	-h|-?: print this help
+mca@MCA18:~/Documents/network_lab$ echo "welcome to linux"
+welcome to linux
+mca@MCA18:~/Documents/network_lab$ read name
+irfana
+mca@MCA18:~/Documents/network_lab$ read $name
+^C
+mca@MCA18:~/Documents/network_lab$ read a b
+^C
+mca@MCA18:~/Documents/network_lab$ read name
+irfana
+mca@MCA18:~/Documents/network_lab$ echo $name
+irfana
+mca@MCA18:~/Documents/network_lab$ more sam.txt
+Artificial Intelligence (AI) is one of the most transformative technologies of the modern world. It refers to the ability of machines and computer syste
+ms to perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding language. AI is use
+d in many everyday applications, including virtual assistants, recommendation systems, healthcare diagnostics, and self-driving cars. By analyzing large
+ amounts of data, AI systems can recognize patterns and make accurate predictions, improving efficiency and saving time. As technology continues to adva
+nce, AI is expected to play an even greater role in shaping industries, economies, and daily life, while also raising important ethical and social quest
+ions.
+mca@MCA18:~/Documents/network_lab$ less sam.txt
+mca@MCA18:~/Documents/network_lab$ less linux.txt
+mca@MCA18:~/Documents/network_lab$ cd /
+mca@MCA18:/$ cd Documents
+bash: cd: Documents: No such file or directory
+mca@MCA18:/$ cd ~
+mca@MCA18:~$ cd .
+mca@MCA18:~$ cd ..
+mca@MCA18:/home$ cd /
+mca@MCA18:/$ cd Documents
+bash: cd: Documents: No such file or directory
+mca@MCA18:/$ cd Documents/network_lab
+bash: cd: Documents/network_lab: No such file or directory
+mca@MCA18:/$ cd ~/Documents/network_lab$
+bash: cd: /home/mca/Documents/network_lab$: No such file or directory
+mca@MCA18:/$ 
+
