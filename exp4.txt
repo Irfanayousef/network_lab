@@ -1,0 +1,84 @@
+mca@MCA18:~/Documents/network_lab/irfana$ mkdir lab1
+mca@MCA18:~/Documents/network_lab/irfana$ cd lab1
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ echo "welcome to programming world" >data.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat data.txt
+welcome to programming world
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat data1.txt
+cat: data1.txt: No such file or directory
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > data1.txt
+Shell programming is writing scripts for a Unix/Linux shell (such as bash, sh, or zsh) to automate tasks.
+A shell script is simply a text file containing a sequence of commands that the shell can execute
+The shell acts as an interface between the user and the operating system.
+Instead of typing commands one by one, you can place them in a script file and run them automatically.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tail -n 2 data1.txt
+The shell acts as an interface between the user and the operating system.
+Instead of typing commands one by one, you can place them in a script file and run them automatically.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^$' data1.txt | wc  -l
+0
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > student.txt
+Anu MCA
+ammu MCA
+anupama MBA
+lakshmi Bsc
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep 'MCA' student.txt
+Anu MCA
+ammu MCA
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cp student.txt backup.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls backup.txt
+backup.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ mv backup.txt final.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ man cp
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ rm student.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls
+data1.txt  data.txt  final.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_ed25519): mca
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in mca
+Your public key has been saved in mca.pub
+The key fingerprint is:
+SHA256:74TdCragIL92HPhrgHafvgytORpRK63hgyoorNh/jxM mca@MCA18
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|                 |
+|   .             |
+|  o .            |
+| = +    S        |
+|+.B.o E  + .     |
+|*=o=.oo.+ + .    |
+|*=+oX+o+ = .     |
+|Bo=B**ooo o      |
++----[SHA256]-----+
+
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ wc data1.txt
+  4  68 381 data1.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ head -n 2 data1.txt
+Shell programming is writing scripts for a Unix/Linux shell (such as bash, sh, or zsh) to automate tasks.
+A shell script is simply a text file containing a sequence of commands that the shell can execute
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ touch f1.txt f2.txt f3.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tar -cvf archive.tar f1.txt f2.txt f3.txt
+f1.txt
+f2.txt
+f3.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ mkdir extracted_files
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tar -xvf archive.tar -c extracted_files
+tar: You may not specify more than one '-Acdtrux', '--delete' or  '--test-label' option
+Try 'tar --help' or 'tar --usage' for more information.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls extracted_files
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^error' logfile.txt | grep -v 'critical'
+grep: logfile.txt: No such file or directory
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > logfile.txt
+apple
+orange
+grapes
+pappaya
+watermelon
+error
+none of the above
+critical
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^error' logfile.txt | grep -v 'critical'
+error
+
