@@ -1,0 +1,221 @@
+mca@MCA18:~/Documents/network_lab/irfana$ mkdir lab1
+mca@MCA18:~/Documents/network_lab/irfana$ cd lab1
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ echo "welcome to programming world" >data.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat data.txt
+welcome to programming world
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat data1.txt
+cat: data1.txt: No such file or directory
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > data1.txt
+Shell programming is writing scripts for a Unix/Linux shell (such as bash, sh, or zsh) to automate tasks.
+A shell script is simply a text file containing a sequence of commands that the shell can execute
+The shell acts as an interface between the user and the operating system.
+Instead of typing commands one by one, you can place them in a script file and run them automatically.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tail -n 2 data1.txt
+The shell acts as an interface between the user and the operating system.
+Instead of typing commands one by one, you can place them in a script file and run them automatically.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^$' data1.txt | wc  -l
+0
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > student.txt
+Anu MCA
+ammu MCA
+anupama MBA
+lakshmi Bsc
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep 'MCA' student.txt
+Anu MCA
+ammu MCA
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cp student.txt backup.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls backup.txt
+backup.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ mv backup.txt final.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ man cp
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ rm student.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls
+data1.txt  data.txt  final.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_ed25519): mca
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in mca
+Your public key has been saved in mca.pub
+The key fingerprint is:
+SHA256:74TdCragIL92HPhrgHafvgytORpRK63hgyoorNh/jxM mca@MCA18
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|                 |
+|   .             |
+|  o .            |
+| = +    S        |
+|+.B.o E  + .     |
+|*=o=.oo.+ + .    |
+|*=+oX+o+ = .     |
+|Bo=B**ooo o      |
++----[SHA256]-----+
+
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ wc data1.txt
+  4  68 381 data1.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ head -n 2 data1.txt
+Shell programming is writing scripts for a Unix/Linux shell (such as bash, sh, or zsh) to automate tasks.
+A shell script is simply a text file containing a sequence of commands that the shell can execute
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ touch f1.txt f2.txt f3.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tar -cvf archive.tar f1.txt f2.txt f3.txt
+f1.txt
+f2.txt
+f3.txt
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ mkdir extracted_files
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ tar -xvf archive.tar -c extracted_files
+tar: You may not specify more than one '-Acdtrux', '--delete' or  '--test-label' option
+Try 'tar --help' or 'tar --usage' for more information.
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ ls extracted_files
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^error' logfile.txt | grep -v 'critical'
+grep: logfile.txt: No such file or directory
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ cat > logfile.txt
+apple
+orange
+grapes
+pappaya
+watermelon
+error
+none of the above
+critical
+mca@MCA18:~/Documents/network_lab/irfana/lab1$ grep '^error' logfile.txt | grep -v 'critical'
+error
+
+mca@MCA18:~/Documents/network_lab$ sudo touch test.sh
+[sudo] password for mca: 
+mca@MCA18:~/Documents/network_lab$ echo "Linux Operating System" > samp.txt
+mca@MCA18:~/Documents/network_lab$ echo "Shell Scripting Basics" >> sample.txt
+mca@MCA18:~/Documents/network_lab$ less sample.txt
+mca@MCA18:~/Documents/network_lab$ chmod g+rw final.txt
+chmod: cannot access 'final.txt': No such file or directory
+mca@MCA18:~/Documents/network_lab$ chmod g+rw linux.txt
+mca@MCA18:~/Documents/network_lab$ ls -l linux.txt
+-rw-rw-r-- 1 mca mca 48 Feb 27 15:00 linux.txt
+mca@MCA18:~/Documents/network_lab$ ps -u $USER -f
+UID          PID    PPID  C STIME TTY          TIME CMD
+mca         1511       1  0 10:58 ?        00:00:00 /usr/lib/systemd/systemd --user
+mca         1512    1511  0 10:58 ?        00:00:00 (sd-pam)
+mca         1540    1511  0 10:58 ?        00:00:03 /usr/bin/pipewire
+mca         1541    1511  0 10:58 ?        00:00:00 /usr/bin/pipewire -c filter-chain.conf
+mca         1542    1511  0 10:58 ?        00:00:00 /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+mca         1544    1511  1 10:58 ?        00:00:09 /usr/bin/wireplumber
+mca         1545    1511  0 10:58 ?        00:00:01 /usr/bin/pipewire-pulse
+mca         1546    1511  0 10:58 ?        00:00:00 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user
+mca         1555    1511  0 10:58 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog
+mca         1579    1500  0 10:58 tty2     00:00:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --sessio
+mca         1593    1579  0 10:58 tty2     00:00:00 /usr/libexec/gnome-session-binary --session=ubuntu
+mca         1691    1511  0 10:58 ?        00:00:00 /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr
+mca         1692    1511  0 10:58 ?        00:00:00 /usr/libexec/gnome-session-ctl --monitor
+mca         1696    1511  0 10:58 ?        00:00:00 /usr/libexec/xdg-document-portal
+mca         1711    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfsd
+mca         1715    1511  0 10:58 ?        00:00:00 /usr/libexec/xdg-permission-store
+mca         1733    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+mca         1735    1511  0 10:58 ?        00:00:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+mca         1780    1735  0 10:58 ?        00:00:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+mca         1781    1511  3 10:58 ?        00:00:27 /usr/bin/gnome-shell
+mca         1794    1780  0 10:58 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-a
+mca         1900    1511  0 10:58 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+mca         1953    1511  0 10:58 ?        00:00:00 /usr/libexec/gnome-shell-calendar-server
+mca         1962    1511  0 10:58 ?        00:00:00 /usr/libexec/evolution-source-registry
+mca         1964    1542  0 10:58 ?        00:00:00 /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+mca         1965    1511  0 10:58 ?        00:00:00 /usr/libexec/dconf-service
+mca         1980    1511  0 10:58 ?        00:00:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+mca         1984    1511  0 10:58 ?        00:00:00 /usr/bin/ibus-daemon --panel disable
+mca         1985    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-a11y-settings
+mca         1990    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-color
+mca         1995    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-datetime
+mca         1998    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-housekeeping
+mca         1999    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-keyboard
+mca         2010    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-media-keys
+mca         2014    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-power
+mca         2016    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-print-notifications
+mca         2021    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-rfkill
+mca         2031    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-screensaver-proxy
+mca         2039    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-sharing
+mca         2045    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-smartcard
+mca         2049    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-sound
+mca         2050    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-wacom
+mca         2071    1735  0 10:58 ?        00:00:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+mca         2106    1735  0 10:58 ?        00:00:00 /usr/libexec/gsd-disk-utility-notify
+mca         2156    1984  0 10:58 ?        00:00:00 /usr/libexec/ibus-dconf
+mca         2158    1984  0 10:58 ?        00:00:01 /usr/libexec/ibus-extension-gtk3
+mca         2162    1511  0 10:58 ?        00:00:00 /usr/libexec/ibus-portal
+mca         2195    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfs-udisks2-volume-monitor
+mca         2200    1511  0 10:58 ?        00:00:00 /usr/libexec/goa-daemon
+mca         2244    1511  0 10:58 ?        00:00:00 /usr/libexec/goa-identity-service
+mca         2252    1511  0 10:58 ?        00:00:00 /usr/libexec/evolution-calendar-factory
+mca         2256    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+mca         2266    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfs-afc-volume-monitor
+mca         2274    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+mca         2284    1511  0 10:58 ?        00:00:00 /usr/libexec/evolution-addressbook-factory
+mca         2287    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+mca         2311    1984  0 10:58 ?        00:00:00 /usr/libexec/ibus-engine-simple
+mca         2349    1711  0 10:58 ?        00:00:00 /usr/libexec/gvfsd-trash --spawner :1.19 /org/gtk/gvfs/exec_spaw/0
+mca         2377    1511  0 10:58 ?        00:00:00 /usr/libexec/tracker-miner-fs-3
+mca         2402    1511  0 10:58 ?        00:00:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+mca         2417    1511  0 10:58 ?        00:00:00 /usr/libexec/xdg-desktop-portal
+mca         2422    1511  0 10:58 ?        00:00:00 /usr/libexec/xdg-desktop-portal-gnome
+mca         2442    1511  0 10:58 ?        00:00:00 /usr/libexec/xdg-desktop-portal-gtk
+mca         2451    1781  0 10:58 ?        00:00:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/e
+mca         2466    1511  0 10:58 ?        00:00:00 /usr/libexec/gvfsd-metadata
+mca         2471    1511  0 10:58 ?        00:00:00 /usr/libexec/gsd-printer
+mca         2687    1735  0 10:59 ?        00:00:00 /usr/bin/update-notifier
+mca         2777    1781  4 11:01 ?        00:00:24 /snap/firefox/7901/usr/lib/firefox/firefox
+mca         2860    1511  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/crashhelper 2777 9 /tmp/ 11
+mca         2971    2777  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -ipcHandle 0 -signalPipe 1 -initialChannelId
+mca         2975    2971  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -parentBuildID 20260225164830 -prefsHandle 0
+mca         2999    2971  0 11:01 ?        00:00:02 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:39308 -prefMapH
+mca         3008    2971  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -parentBuildID 20260225164830 -prefsHandle 0
+mca         3056    1511  0 11:01 ?        00:00:00 /usr/bin/snap userd
+mca         3223    2971  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:39365 -prefMapH
+mca         3574    2971  0 11:01 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -parentBuildID 20260225164830 -sandboxingKin
+mca         3723    2971  0 11:01 ?        00:00:01 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44345 -prefMapH
+mca         3766    2971  7 11:01 ?        00:00:40 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44345 -prefMapH
+mca         4123    1511  0 11:03 ?        00:00:00 /bin/bash /snap/libreoffice/366/libreoffice.wrapper --writer /home/mca/Downloads/Experiment 4.docx
+mca         4203    4123  6 11:03 ?        00:00:29 /snap/libreoffice/366/lib/libreoffice/program/soffice.bin --writer /home/mca/Downloads/Experiment 4.
+mca         4333    1711  0 11:03 ?        00:00:00 /usr/libexec/gvfsd-recent --spawner :1.19 /org/gtk/gvfs/exec_spaw/1
+mca         4354    1511  0 11:03 ?        00:00:02 /usr/libexec/gnome-terminal-server
+mca         4361    4354  0 11:03 pts/0    00:00:00 bash
+mca         4629    2971  0 11:08 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44643 -prefMapH
+mca         4687    2971  0 11:09 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44643 -prefMapH
+mca         4734    2971  0 11:10 ?        00:00:00 /snap/firefox/7901/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44643 -prefMapH
+mca         4779    4361  0 11:11 pts/0    00:00:00 ps -u mca -f
+mca@MCA18:~/Documents/network_lab$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  2.5M  1.6G   1% /run
+/dev/nvme0n1p6  181G   39G  132G  23% /
+tmpfs           7.7G     0  7.7G   0% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+efivarfs        256K  126K  126K  50% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   96M   33M   64M  34% /boot/efi
+tmpfs           1.6G  200K  1.6G   1% /run/user/1000
+mca@MCA18:~/Documents/network_lab$  find . -name "*.txt"
+./exp4.txt
+./irfana/mca.txt
+./irfana/lab1/data.txt
+./irfana/lab1/logfile.txt
+./irfana/lab1/f3.txt
+./irfana/lab1/data1.txt
+./irfana/lab1/final.txt
+./irfana/lab1/f2.txt
+./irfana/lab1/f1.txt
+./sam.txt
+./linux.txt
+./s2.txt
+./sample.txt
+./sample1.txt
+./samp.txt
+./file.txt
+mca@MCA18:~/Documents/network_lab$ ls -l *.txt
+-rw-rw-r-- 1 mca mca  3706 Mar  6 15:27 exp4.txt
+-rw-rw-r-- 1 mca mca    22 Feb 23 14:45 file.txt
+-rw-rw-r-- 1 mca mca    48 Feb 27 15:00 linux.txt
+-rw-rw-r-- 1 mca mca    31 Feb 23 15:06 s2.txt
+-rw-rw-r-- 1 mca mca 36119 Mar  2 12:11 sample1.txt
+-rw-rw-r-- 1 mca mca  3952 Mar  9 11:06 sample.txt
+-rw-rw-r-- 1 mca mca    23 Mar  9 11:06 samp.txt
+-rw-rw-r-- 1 mca mca   766 Mar  2 11:32 sam.txt
+mca@MCA18:~/Documents/network_lab$ 
+
+
