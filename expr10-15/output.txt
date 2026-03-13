@@ -1,0 +1,33 @@
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x pgm1.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./pgm1.sh
+Enter a year: 2023
+2023 is not a leap year
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x pgm2.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./pgm2.sh
+Enter a number: 8
+8 is Even
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./exp12.sh
+bash: ./exp12.sh: Permission denied
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x exp12.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./exp12.sh
+Enter first number: 2
+Enter second number: 4
+Enter third number: 6
+6 is the largest number
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x exp13.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./exp13.sh
+Enter n: 5
+Sum of first 5 natural numbers is 15
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x exp14.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./exp14.sh
+Enter a number: 4
+Factorial of 4 is 24
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x exp15.sh
+chmod: cannot access 'exp15.sh': No such file or directory
+mca@MCA18:~/Documents/network_lab/expr10-15$ chmod +x expr15.sh
+mca@MCA18:~/Documents/network_lab/expr10-15$ ./expr15.sh
+Enter number of terms: 4      
+Fibonacci Series:
+0 1 1 2 
+mca@MCA18:~/Documents/network_lab/expr10-15$ 
+
