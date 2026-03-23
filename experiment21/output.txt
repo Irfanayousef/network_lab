@@ -1,0 +1,9 @@
+mca@MCA18:~/Documents/network_lab/experiment21$ chmod +x exp21.sh
+mca@MCA18:~/Documents/network_lab/experiment21$ ./exp21.sh
+Enter a number:123
+Not a palindrome
+mca@MCA18:~/Documents/network_lab/experiment21$ chmod +x exp21.sh
+mca@MCA18:~/Documents/network_lab/experiment21$ ./exp21.sh
+Enter a number:121
+Palindrome number
+
