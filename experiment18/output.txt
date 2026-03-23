@@ -1,0 +1,4 @@
+mca@MCA18:~/Documents/network_lab/experiment18$ ./exp18.sh
+Enter a number: 4
+1 2 3 4 
+
