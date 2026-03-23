@@ -1,0 +1,8 @@
+Enter first number: 4
+Enter second number: 7
+Select operation:
+1. Addition
+2. Subtraction
+Enter option: 1
+Addition = 11
+

@@ -1,0 +1,8 @@
+mca@MCA18:~/Documents/network_lab/experiment23$ chmod +x menu.sh
+mca@MCA18:~/Documents/network_lab/experiment23$ ./menu.sh
+Enter a number: 234531
+1. Sum of digits
+2. Reverse of number
+Enter your choice:2
+Reverse = 135432
+
