@@ -1,0 +1,6 @@
+mca@MCA18:~/Documents/network_lab/experiment19$ ./elif.sh
+Enter first number: 2 
+Enter second number: 4
+2 is smaller than 4
+Sum = 6
+
