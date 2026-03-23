@@ -1,0 +1,8 @@
+mca@MCA18:~/Documents/network_lab/experiment16$ chmod +x exp16.sh
+mca@MCA18:~/Documents/network_lab/experiment16$ ./exp16.sh
+Enter a : 3
+Enter b :5
+After interchange:
+First number = 5
+Second number = 3
+
