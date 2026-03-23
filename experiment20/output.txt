@@ -1,0 +1,4 @@
+mca@MCA18:~/Documents/network_lab/experiment20$ ./reverse.sh
+Enter a five digit number: 78945
+Reversed number = 54987
+
