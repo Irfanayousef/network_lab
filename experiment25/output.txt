@@ -1,0 +1,20 @@
+output-1
+
+mca@MCA18:~/Documents/network_lab/experiment25$ ./sum.sh
+ Enter two numbers: 3 4
+Sum = 7
+
+output-2
+
+mca@MCA18:~/Documents/network_lab/experiment25$ ./evenodd.sh
+Enter a number: 5
+5 is Odd
+
+
+output-3
+
+mca@MCA18:~/Documents/network_lab/experiment25$ ./factorial.sh
+Enter a number: 5
+Factorial = 120
+
+
