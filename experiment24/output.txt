@@ -1,0 +1,60 @@
+ouput-1
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./a.sh
+Enter number of rows:
+2
+* 
+* * 
+
+output-2
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./invertedTriangle.sh
+Enter number of rows:4
+* * * * 
+* * * 
+* * 
+* 
+
+ouput-3
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./pyramid.sh
+Enter number of rows:5
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+output-4
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./d.sh
+Enter number of rows:5
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+output-5
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./e.sh
+Enter number of rows: 5
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+output-6
+
+mca@MCA18:~/Documents/network_lab/experiment24$ ./floyd.sh
+Enter number of rows: 5
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+
+
+
+
